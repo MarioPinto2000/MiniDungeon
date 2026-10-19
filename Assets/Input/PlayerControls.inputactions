@@ -10,7 +10,7 @@
                     "name": "Move",
                     "type": "Value",
                     "id": "f38322e2-4537-4922-88a0-3e80ce6f1500",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true,
@@ -20,6 +20,16 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "816c9073-edcc-403a-bbee-ed5724cb38ac",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "PauseMenu",
+                    "type": "Button",
+                    "id": "fd828d44-bdef-443f-a226-63ce86c59500",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -69,6 +79,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a8b3264a-294b-418d-a45b-e4d1b71be046",
+                    "path": "<Keyboard>/#(P)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
