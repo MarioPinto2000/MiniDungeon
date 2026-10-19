@@ -27,6 +27,16 @@
                     "priority": 0
                 },
                 {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "1f867d50-0d89-4880-9bc2-60780a4c6339",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
                     "name": "PauseMenu",
                     "type": "Button",
                     "id": "fd828d44-bdef-443f-a226-63ce86c59500",
@@ -90,6 +100,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "PauseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7af39153-4131-4c9c-ba82-a258cb4c378f",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

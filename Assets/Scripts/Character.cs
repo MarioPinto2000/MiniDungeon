@@ -1,17 +1,21 @@
 using UnityEngine;
 
-public abstract class Character : MonoBehaviour
+public abstract class Character : MonoBehaviour, IDamageable
 {
-    [Header("Character Stats")]
-    [SerializeField] protected float maxHP;
-    [SerializeField] protected float damage;
-
     protected float currentHp;
 
-    protected virtual void Awake()
-    {
-        currentHp = maxHP;
-    }
-
     public abstract void Attack();
+
+    public virtual void TakeDamage(float amount)
+    {
+        currentHp -= amount;
+        if (currentHp <= 0f)
+        {
+            Die();
+        }
+    }
+    protected virtual void Die()
+    {
+        Destroy(gameObject);
+    }
 }
