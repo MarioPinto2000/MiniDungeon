@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 128274337}
   - component: {fileID: 128274336}
   - component: {fileID: 128274334}
+  - component: {fileID: 128274339}
   - component: {fileID: 128274333}
   - component: {fileID: 128274338}
   m_Layer: 8
@@ -366,7 +367,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!212 &128274336
 SpriteRenderer:
   serializedVersion: 3
@@ -488,6 +489,27 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &128274339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128274332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e7d093d83db3b4e8cc1dfaf1b50a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Hopmovement
+  patrolDistance: 3
+  startMovingRight: 1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  groundCheckRadius: 0.1
+  hopForce: 6
+  hopSpeed: 3
+  timeBetweenHops: 1
 --- !u!1 &185533718
 GameObject:
   m_ObjectHideFlags: 0
