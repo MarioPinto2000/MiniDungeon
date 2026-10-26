@@ -14,6 +14,8 @@ public class Mage : Character
 
     private float nextAttackTime;
 
+    public override float MaxHP => maxHP; //for hp ui
+
     //IMPORTANT: currentHp lives in the main class Character, but the maxhp lives here
     //every subclass has to initialize currentHp
     private void Awake()

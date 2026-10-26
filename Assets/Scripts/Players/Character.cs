@@ -8,6 +8,9 @@ public abstract class Character : MonoBehaviour, IDamageable
     //each subclass declares its own values, so every character as different values
     protected float currentHp;
 
+    public float CurrentHp => currentHp; //for hp ui
+    public abstract float MaxHP { get; } //for hp ui
+
     //every character must implement its own attack type
     //each subclas must implement its own cds inside this method
 
