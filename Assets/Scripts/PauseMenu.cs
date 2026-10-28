@@ -23,6 +23,8 @@ public class PauseMenu : MonoBehaviour
     //toggle, when pressing the key again it resumes
     private void OnPause(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
+        if (GameOverUI.IsGameOver) return;
+
         if (container.activeSelf)
         {
             ResumeBt();

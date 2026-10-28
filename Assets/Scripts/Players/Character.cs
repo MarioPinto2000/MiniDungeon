@@ -11,6 +11,9 @@ public abstract class Character : MonoBehaviour, IDamageable
     public float CurrentHp => currentHp; //for hp ui
     public abstract float MaxHP { get; } //for hp ui
 
+    public event System.Action Died;          //raised once when HP reaches 0
+    private bool isDead;                      //makes sure Died is raised only once
+
     //every character must implement its own attack type
     //each subclas must implement its own cds inside this method
 
@@ -26,10 +29,12 @@ public abstract class Character : MonoBehaviour, IDamageable
             Die();
         }
     }
-    //default behaviour, destroy the GameObject if hp=0
+  
     //virtual so override it for death animation for e.g
     protected virtual void Die()
     {
-        Destroy(gameObject);
+        if (isDead) return;                   //ignore extra hits after dying
+        isDead = true;                       
+        Died?.Invoke();                       
     }
 }
