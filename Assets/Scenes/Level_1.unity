@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e634d553e972954f8208dfcb525fe72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Slime
-  maxHP: 30
+  maxHP: 50
   contactDamage: 10
   attackCooldown: 1
   playerLayer:
@@ -1716,6 +1716,7 @@ GameObject:
   - component: {fileID: 542366223}
   - component: {fileID: 542366222}
   - component: {fileID: 542366221}
+  - component: {fileID: 542366226}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -1916,6 +1917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Mage
   maxHP: 80
   damage: 35
+  invincibilityTime: 0.5
   projectilePrefab: {fileID: 3134254301636468318, guid: 5357172612658f24a97d5b93da56f894, type: 3}
   firepoint: {fileID: 1345889693}
   projectileSpeed: 12
@@ -1934,6 +1936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Hero
   maxHP: 150
   damage: 20
+  invincibilityTime: 0.5
   attackPoint: {fileID: 1486787584}
   attackRange: 0.8
   enemyLayers:
@@ -1962,6 +1965,22 @@ MonoBehaviour:
   rb: {fileID: 542366218}
   moveAction: {fileID: 1281988715919892108, guid: 123c26e1e36dbfd4e98a94c8024eee4d, type: 3}
   jumpAction: {fileID: -1692762450885568523, guid: 123c26e1e36dbfd4e98a94c8024eee4d, type: 3}
+--- !u!114 &542366226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542366216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328eb596fa3e04f4eb9f76a30992dee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageFlash
+  spriteRenderer: {fileID: 542366219}
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.15
+  blinkInterval: 0.08
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

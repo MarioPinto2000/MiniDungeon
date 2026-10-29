@@ -5,16 +5,19 @@ public class Hero : Character
     [Header("Hero stats")]
     [SerializeField] private float maxHP = 150f;
     [SerializeField] private float damage = 20f;
+    [SerializeField, Min(0f)] private float invincibilityTime = 0.5f; //seconds without taking damage after a hit
 
     [Header("Hero settings")]
     [SerializeField] private Transform attackPoint; //child object placed in front of this character
     [SerializeField] private float attackRange = 0.8f; //radious of the attack
     [SerializeField] private LayerMask enemyLayers; //only this layers can be hit
-    [SerializeField] private float attackCooldown = 0.4f; 
+    [SerializeField] private float attackCooldown = 0.4f;
+
 
     private float nextAttackTime;//Time.time value between attacks
 
     public override float MaxHP => maxHP; //for hp ui
+    public override float InvincibilityTime => invincibilityTime;
 
     //IMPORTANT: currentHp lives in the main class Character, but the maxhp lives here
     //every subclass has to initialize currentHp
@@ -29,7 +32,7 @@ public class Hero : Character
         if (Time.time < nextAttackTime) return;
         nextAttackTime = Time.time + attackCooldown;
 
-        //Finds every collider inside the attack range
+        //finds every collider inside the attack range
         //attack point is a child of hero, so it follows and flips with hero
         Collider2D[] hits = Physics2D.OverlapCircleAll(
             attackPoint.position,

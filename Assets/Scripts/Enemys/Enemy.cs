@@ -18,6 +18,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     public virtual void TakeDamage(float amount)
     {
         currentHp -= amount;
+        if (TryGetComponent(out DamageFlash flash)) flash.Flash(); //damage flash
         if (currentHp <= 0)
         {
             Die();

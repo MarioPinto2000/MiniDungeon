@@ -5,18 +5,20 @@ public class Mage : Character
     [Header("Mage stats")]
     [SerializeField] private float maxHP = 80f;
     [SerializeField] private float damage = 35f;
+    [SerializeField, Min(0f)] private float invincibilityTime = 0.5f;
 
     [Header("Mage settings")]
-    [SerializeField] private GameObject projectilePrefab; //Prefab with Projectile + Rigidbody 2D + trigger collider
-    [SerializeField] private Transform firepoint; //Child object where projectile spawns
+    [SerializeField] private GameObject projectilePrefab; //prefab with Projectile + Rigidbody 2D + trigger collider
+    [SerializeField] private Transform firepoint; //child object where projectile spawns
     [SerializeField] private float projectileSpeed = 12f;
     [SerializeField] private float attackCooldown = 1.2f;
 
     private float nextAttackTime;
 
     public override float MaxHP => maxHP; //for hp ui
+    public override float InvincibilityTime => invincibilityTime; 
 
-    //IMPORTANT: currentHp lives in the main class Character, but the maxhp lives here
+    //currentHp lives in the main class Character, but the maxhp lives here
     //every subclass has to initialize currentHp
     private void Awake()
     {

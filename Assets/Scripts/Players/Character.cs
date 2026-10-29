@@ -11,6 +11,10 @@ public abstract class Character : MonoBehaviour, IDamageable
     public float CurrentHp => currentHp; //for hp ui
     public abstract float MaxHP { get; } //for hp ui
 
+    public abstract float InvincibilityTime { get; } //seconds of invincibility after a hit
+    private float invincibleUntil; //Time.time until which damage is ignored
+
+
     public event System.Action Died;          //raised once when HP reaches 0
     private bool isDead;                      //makes sure Died is raised only once
 
@@ -23,6 +27,9 @@ public abstract class Character : MonoBehaviour, IDamageable
     //virtual allows the subclasses to override it (e.g add more hp item)
     public virtual void TakeDamage(float amount)
     {
+        if (isDead || Time.time < invincibleUntil) return; //ignore damage while dead or invincible
+        invincibleUntil = Time.time + InvincibilityTime;   //starts the invincibility window
+        if (TryGetComponent(out DamageFlash flash)) flash.Flash(InvincibilityTime); // CHANGED: new, blink for as long as it lasts
         currentHp -= amount;
         if (currentHp <= 0f)
         {
