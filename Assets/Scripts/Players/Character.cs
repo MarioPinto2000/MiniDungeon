@@ -29,7 +29,7 @@ public abstract class Character : MonoBehaviour, IDamageable
     {
         if (isDead || Time.time < invincibleUntil) return; //ignore damage while dead or invincible
         invincibleUntil = Time.time + InvincibilityTime;   //starts the invincibility window
-        if (TryGetComponent(out DamageFlash flash)) flash.Flash(InvincibilityTime); // CHANGED: new, blink for as long as it lasts
+        if (TryGetComponent(out DamageFlash flash)) flash.Flash(InvincibilityTime); //blink for as long as it lasts
         currentHp -= amount;
         if (currentHp <= 0f)
         {

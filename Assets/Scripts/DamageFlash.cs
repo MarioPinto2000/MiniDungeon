@@ -6,7 +6,7 @@ public class DamageFlash : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Color flashColor = Color.red; //red by default
-    [SerializeField, Min(0.01f)] private float flashDuration = 0.15f; //flash time
+    [SerializeField, Min(0.01f)] private float flashDuration = 0.5f; //flash time
     [SerializeField, Min(0.01f)] private float blinkInterval = 0.08f; //time between flashs
 
     private Color originalColor;
@@ -15,7 +15,7 @@ public class DamageFlash : MonoBehaviour
     private void Awake()
     {
         if (spriteRenderer == null) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        originalColor = spriteRenderer.color; //sprite returns to ITS colour
+        originalColor = spriteRenderer.color; //sprite returns to original colour
     }
 
     public void Flash()
@@ -23,7 +23,7 @@ public class DamageFlash : MonoBehaviour
         Flash(flashDuration);
     }
 
-    //player passes its invincibility time, so it blinks for exactly as long as it cannot be hurt.
+    //passes its invincibility time, so it blinks for exactly as long as it cannot be hurt.
     public void Flash(float duration)
     {
         if (routine != null) StopCoroutine(routine);

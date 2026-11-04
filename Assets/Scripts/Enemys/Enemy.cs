@@ -12,7 +12,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     //being the target the player
 
     protected abstract void Attack(Character target);
-    
+
     //reduces hp and triggers death when currentHp = 0
 
     public virtual void TakeDamage(float amount)
