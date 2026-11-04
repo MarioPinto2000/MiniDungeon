@@ -1,4 +1,4 @@
-# MiniDungeon — 2D Platformer in Unity
+# MiniDungeon — 2D Platformer in Unity (In progress)
 
 A 2D platformer game featuring two playable classes, Hero (sword) and Mage (projectiles). It features enemies with custom movement, a health bar, damage feedback, and a Game Over screen.
 
