@@ -9,12 +9,7 @@ A 2D platformer game featuring two playable classes, Hero (sword) and Mage (proj
 2. Requirements
 3. Controls
 4. Script Structure
-5. Architecture & Design Decisions
-6. Scene Setup
-7. Default Values
-8. How to Extend the Game
-9. Troubleshooting
-10. Known Limitations
+5. Future Develpments
 
 ---
 
@@ -46,7 +41,7 @@ Movement, jump, and pause controls are the bindings you define in your Input Act
 
 | Action | Input Action Type | Binding |
 | :--- | :--- | :--- |
-| **Move** | Value, Axis (float) | A (Right) D (Lelt) |
+| **Move** | Value, Axis (float) | A (Right) D (Left) |
 | **Jump** | Button | Spacebar |
 | **Attack** | Button | Left Shift |
 | **Pause** | Button | P |
